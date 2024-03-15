@@ -130,7 +130,7 @@ Create a placeholder file and network interface.
     unmanaged-devices=none
     ```
 
-2. If you run on Ubuntu with arm64 (e.g.: on a Raspberry Pi), install extra Linux kernel modules for networking:
+2. If you run on Ubuntu with arm64 (e.g.: on a Raspberry Pi), install extra Linux kernel modules for networking (if no arm64 continue with step 3):
 
     ```
     sudo apt install linux-modules-extra-raspi
@@ -142,7 +142,7 @@ Create a placeholder file and network interface.
     nmcli con add type dummy con-name fake ifname fake0 ip4 1.2.3.4/24 gw4 1.2.3.1
     ```
 
-4. Reboot
+4. sudo systemctl restart systemd-networkd (or Reboot if restart of the service is not sufficient)
 
 ##### Explanation
 {:.no_toc}
